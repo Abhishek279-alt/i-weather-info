@@ -1,0 +1,22 @@
+.card {
+  min-width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12.7vh;
+  margin-bottom: 20vh;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.card-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.card-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.footer-text {
+  font-size: 12px;
+}
