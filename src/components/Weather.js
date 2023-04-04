@@ -8,7 +8,11 @@ const Weather = ({ weatherData, hour }) => {
   let min = Math.round(weatherData.main.temp_min - 273.15);
   let max = Math.round(weatherData.main.temp_max - 273.15);
   return (
-    <div className={`card text-${hour >= 4 && hour <= 18 ? "dark" : "light"}`}>
+    <div
+      className={`card text-${
+        hour >= 4 && hour <= 18 ? "dark" : "light"
+      } shadow-sm`}
+    >
       <div className="card-header">
         <h3 className="text-start">
           {weatherData.name}({weatherData.sys.country})

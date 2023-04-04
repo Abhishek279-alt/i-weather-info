@@ -5,8 +5,8 @@ import { FaSearch, FaInfoCircle } from "react-icons/fa";
 
 function App() {
   const dayBg =
-    "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)";
-  const nightBg = `linear-gradient(to right top, #0e073f, #10134a, #141d54, #18285f, #1c3269, #1e3572, #20397b, #223c84, #2a388c, #363193, #452898, #56189b)`;
+    "linear-gradient(to top, #17b9ce, #00c8bb, #4dd396, #95d968, #dcd640)";
+  const nightBg = `linear-gradient(to right top, #3e3251, #2f4061, #184e6a, #025b6a, #1a6664)`;
   const curDate = new Date();
   let hour = curDate.getHours();
 
@@ -72,24 +72,35 @@ Created by: Abhishek Singh Rajput`}
       >
         <FaInfoCircle />
       </div>
-      <h2 className="text-center" style={{ color: "turquoise" }}>
+      <h2 className="text-center" style={{ color: "#5B7881" }}>
         Weather-Info
       </h2>
 
       <div className="select-panel my-4">
         <form action="#" onSubmit={getWeather}>
-          <input
-            id="search"
-            type="text"
-            placeholder="Search City"
-            value={val}
-            onChange={(event) => {
-              setVal(event.target.value);
+          <div
+            class="mb-3 bg-white"
+            style={{
+              border: "1px solid rgb(171, 159, 129)",
+              borderRadius: "10px",
             }}
-          />
-          <button type="submit" className="btn  btn-outline-info pb-3 b-search">
-            <FaSearch />
-          </button>
+          >
+            <input
+              id="search"
+              type="text"
+              placeholder="Search City"
+              value={val}
+              onChange={(event) => {
+                setVal(event.target.value);
+              }}
+            />
+            <button
+              type="submit"
+              className="btn  btn-outline-info pb-3 b-search"
+            >
+              <FaSearch />
+            </button>
+          </div>
         </form>
       </div>
       {typeof data.main != "undefined" || data.cod === "200" ? (
@@ -97,7 +108,7 @@ Created by: Abhishek Singh Rajput`}
       ) : data.cod === "404" ? (
         <div className="oops display-6 text-warning">City not found</div>
       ) : (
-        <div className="oops display-6 text-warning">Search a city</div>
+        <div className="oops display-6 text-warning ">Search a city</div>
       )}
     </div>
   );
